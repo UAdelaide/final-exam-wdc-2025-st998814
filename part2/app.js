@@ -54,9 +54,9 @@ app.post('/login',async(req,res) => {
                 role: rows[0].role
             };
             if (rows[0].role === 'owner') {
-                res.redirect('/owner-dashboard');
+                res.redirect('/owner-dashboard.html');
             } else if (rows[0].role === 'walker'){
-                res.redirect('/walker-dashboard');
+                res.redirect('/walker-dashboard.html');
             } else{
                 res.redirect('/');
             }
