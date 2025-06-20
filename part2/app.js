@@ -16,14 +16,9 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 app.use(session({
-    secret:"secret",
-    resave:false,
-    
-
-
-
-
-
-}))
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false
+}));
 // Export the app instead of listening here
 module.exports = app;
