@@ -58,12 +58,6 @@ app.get('/api/dogs', async (req, res) => {
 
 
 
-
-
-
-
-
-
     res.json(dogsWithPhoto);
   } catch (err) {
     console.error(err);
