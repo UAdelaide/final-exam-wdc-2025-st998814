@@ -38,6 +38,8 @@ app.post('/login',async(req,res)=>{
                 res.redirect('/owner-dashboard');
             } else if (rows[0].role === 'walker'){
                 res.redirect('/walker-dashboard');
+            } else{
+
 
             }
 
