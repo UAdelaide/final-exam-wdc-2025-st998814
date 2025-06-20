@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-const mysql = require('mysql2/promise');
+
 
 const app = express();
 
@@ -14,22 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-// connect DB
-const dbConfig = {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'DogWalkService'
-};
 
-let pool;
 
-async function initDb() {
-    pool = await mysql.createPool(dbConfig);
-    console.log('DB connected');
-}
 
-initDb();
+
+
+
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 app.use(session({
