@@ -38,7 +38,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
-// habdle login
+// handle login
 app.post('/login',async(req,res) => {
     const { username, password } = req.body;
     try {
@@ -68,6 +68,8 @@ app.post('/login',async(req,res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+// 
 
 module.exports = app;
 
