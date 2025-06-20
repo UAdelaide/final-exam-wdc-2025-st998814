@@ -13,7 +13,7 @@ const dbConfig={
 const port=8080;
 let pool;
 
-pool = await mysql.createPool(dbConfig);
+//pool = await mysql.createPool(dbConfig);
 // here is routes
 
 // api/dogs
