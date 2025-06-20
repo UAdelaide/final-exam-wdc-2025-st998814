@@ -34,6 +34,8 @@ app.post('/login',async(req,res)=>{
                 username: rows[0].username,
                 role: rows[0].role
             };
+            if (rows[0].role === 'owner') {
+                res.redirect('/owner-dashboard');
 
 
 
