@@ -40,7 +40,7 @@ async function initDb() {
 // here is routes
 
 // api/dogs
-app.get()
+app.get('/api/dogs')
 
 
 
