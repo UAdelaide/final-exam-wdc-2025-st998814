@@ -21,12 +21,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
-const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'DogWalkService'
-};
+
 
 app.post('/login',async(req,res) => {
     const { username, password } = req.body;
