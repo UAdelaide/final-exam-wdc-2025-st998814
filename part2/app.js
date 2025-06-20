@@ -37,7 +37,6 @@ app.use('/api/users', userRoutes);
 
 
 
-
 app.get('/api/owner/dogs', async (req, res) => {
     try {
         if (!req.session.user || req.session.user.role !== 'owner') {
