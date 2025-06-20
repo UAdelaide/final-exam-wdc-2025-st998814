@@ -26,7 +26,7 @@ const dbConfig = {
 };
 
 let pool;
-
+// init db everytime
 async function initDb() {
   pool = await mysql.createPool(dbConfig);
     await pool.query(`INSERT IGNORE INTO Users (username, email, password_hash, role) VALUES
