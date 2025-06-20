@@ -40,19 +40,8 @@ async function initDb() {
 // here is routes
 
 // api/dogs
+app.get()
 
-// q:{
- //SELECT
-        Dogs.name AS dog_name,
-        Dogs.size,
-        Users.username AS owner_username
-      FROM Dogs
-      JOIN Users ON Dogs.owner_id = Users.user_id
-
-
-
-
-}
 
 
 
