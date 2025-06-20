@@ -24,7 +24,14 @@
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3"> <!-- this site! -->
             <label class="form-label">Select Your Dog:</label>
-            <input v-model="form.dog_id" type="number" class="form-control" required>
+            <!--<input v-model="form.dog_id" type="number" class="form-control" required>-->
+            <select name="dog_id" required>
+    <option value="">-- Choose a dog --</option>
+    <% dogs.forEach(function(dog) { %>
+        <option value="<%= dog.dog_id %>"><%= dog.name %></option>
+    <% }) %>
+</select>
+
           </div>
           <div class="mb-3">
             <label class="form-label">Requested Date & Time</label>
