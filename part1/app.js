@@ -46,11 +46,11 @@ app.get('/api/dogs', async (req, res) => {
     //     const response = await fetch('https://dog.ceo/api/breeds/image/random');
     //     const data = await response.json();
     //     photo_url = data.message;
-    //   } catch (err) {
-    //     console.error('Failed to load img:', err);
-    //     photo_url = ''; // fallback
-    //   }
-    //   return { ...dog, photo_url };
+       } catch (err) {
+        console.error('Failed to load img:', err);
+           photo_url = ''; // fallback
+      }
+      return { ...dog, photo_url };
 
 
 
