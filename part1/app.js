@@ -6,7 +6,7 @@ app.use(express.json());
 const dbConfig={
     host: 'localhost',
     user: 'root',
-    password: 'rock8888',
+    password: '',
     database: 'dogwalks'
 
 };
