@@ -30,11 +30,15 @@ let pool;
 async function initDb() {
   pool = await mysql.createPool(dbConfig);
     await pool.query(`INSERT IGNORE INTO Users (username, email, password_hash, role) VALUES
-    ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+
     ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+
     ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+
     ('devdog', 'devdog@example.com', 'hashed444', 'owner'),
-    ('dogdev', 'dogdev@example.com', 'hashed7414', 'walker')
+
+    ('dogdev', 'dogdev@example.com', 'hashed7414', 'walker');
   `);
 
   await pool.query(`INSERT IGNORE INTO Dogs (owner_id, name, size) VALUES
