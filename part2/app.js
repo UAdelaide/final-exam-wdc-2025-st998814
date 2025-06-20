@@ -45,6 +45,11 @@ app.post('/login',async(req,res)=>{
 
             res.send('Login failed. Invalid username or password.');
         }
+    } catch (err) {
+        console.error(err);
+
+
+
     }
 
 
