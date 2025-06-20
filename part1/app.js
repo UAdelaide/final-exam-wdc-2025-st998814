@@ -40,25 +40,25 @@ app.get('/api/dogs', async (req, res) => {
     `);
 
     // fetch random dog photo
-    const dogsWithPhoto = await Promise.all(rows.map(async (dog) => {
-      let photo_url = '';
-      try {
-        const response = await fetch('https://dog.ceo/api/breeds/image/random');
-        const data = await response.json();
-        photo_url = data.message;
-      } catch (err) {
-        console.error('Failed to load img:', err);
-        photo_url = ''; // fallback
-      }
-      return { ...dog, photo_url };
+    // const dogsWithPhoto = await Promise.all(rows.map(async (dog) => {
+    //   let photo_url = '';
+    //   try {
+    //     const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    //     const data = await response.json();
+    //     photo_url = data.message;
+    //   } catch (err) {
+    //     console.error('Failed to load img:', err);
+    //     photo_url = ''; // fallback
+    //   }
+    //   return { ...dog, photo_url };
 
 
 
-    }));
+    // }));
 
 
 
-    res.json(dogsWithPhoto);
+    res.json(rows);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Internal Server Error' });
