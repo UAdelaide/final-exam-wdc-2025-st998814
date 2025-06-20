@@ -23,6 +23,7 @@
 
 
         }
+        
 
 
     </style>
@@ -34,8 +35,9 @@
         <p><b>Dog Name:</b> Max</p>
         <p><b>Breed:</b> Golden Retriever</p>
         <img class="dog-image" :src="dogImageUrl">
-
+        <div class="button-wrap">
         <button type="button" @click="fetchDog()">Get Another Dog!</button>
+        </div>div>
     </div>
     <script>
         const app =Vue.createApp({
