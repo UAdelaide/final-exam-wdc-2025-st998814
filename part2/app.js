@@ -22,16 +22,17 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
-
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
 app.use(session({
     secret: "y68n8ubhyvgtfbjuhygf",
     resave: false,
     saveUninitialized: false
 }));
+
+
+
+app.use('/api/walks', walkRoutes);
+app.use('/api/users', userRoutes);
+
 
 
 
