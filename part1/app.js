@@ -10,3 +10,8 @@ const dbConfig={
     database: 'dogwalks'
 
 };
+
+let pool;
+
+async function initDb() {
+  pool = await mysql.createPool(dbConfig);
