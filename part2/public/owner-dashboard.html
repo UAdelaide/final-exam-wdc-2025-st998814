@@ -27,10 +27,10 @@
             <!--<input v-model="form.dog_id" type="number" class="form-control" required>-->
             <select name="dog_id" required>
                 <option value="">-- Choose a dog --</option>
-                <% dogs.forEach(function(dog) { %>
+                   <% dogs.forEach(function(dog) { %>
                     <option value="<%= dog.dog_id %>"><%= dog.name %></option>
-    <% }) %>
-</select>
+              <% }) %>
+              </select>
 
           </div>
           <div class="mb-3">
