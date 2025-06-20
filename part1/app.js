@@ -38,6 +38,9 @@ app.get('/api/dogs', async (req, res) => {
       FROM Dogs
       JOIN Users ON Dogs.owner_id = Users.user_id
     `);
+
+    // fetch random dog photo
+    
     res.json(rows);
   } catch (err) {
     console.error(err);
