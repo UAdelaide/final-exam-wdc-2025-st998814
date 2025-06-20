@@ -7,8 +7,8 @@ const dbConfig={
 
     host:'localhost',
     user:'root',
-    password:'rock8888'
-    
+    password:'rock8888',
+    database:'dogwalks'
 
 
 
