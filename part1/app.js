@@ -67,6 +67,9 @@ async function initDb() {
 
   `);
 }
+
+
+
 app.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await pool.query(`
