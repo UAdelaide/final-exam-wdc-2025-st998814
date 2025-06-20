@@ -40,7 +40,7 @@ async function initDb() {
   await pool.query(`INSERT IGNORE INTO Dogs (owner_id, name, size) VALUES
     ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
     ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
-    ((SELECT user_id FROM Users WHERE username = 'daveowner'), 'Rocky', 'large')
+    ((SELECT user_id FROM Users WHERE username = ''), 'Rocky', 'large')
   `);
 
   await pool.query(`INSERT IGNORE INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
