@@ -40,7 +40,8 @@ app.get('/api/dogs', async (req, res) => {
     `);
 
     // fetch random dog photo
-    
+    const dogswithphoto=await
+
     res.json(rows);
   } catch (err) {
     console.error(err);
