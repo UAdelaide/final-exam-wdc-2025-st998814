@@ -56,6 +56,15 @@ createApp({
 
         alert(result.message);
 
+        // Redirect based on role
+        if (result.user?.role === 'owner') {
+          window.location.href = 'http://localhost:8080/owner-dashboard.html';
+        } else if (result.user?.role === 'walker') {
+          window.location.href = 'http://localhost:8080/walker-dashboard.html';
+        } else {
+          console.warn('Unknown role:', result.user?.role);
+        }
+
       } catch (err) {
         alert(err.message);
       }
