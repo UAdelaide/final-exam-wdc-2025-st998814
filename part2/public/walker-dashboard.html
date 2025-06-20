@@ -77,6 +77,25 @@
           }
         }
 
+      async function logout() {
+        try {
+          const res = await fetch('/api/users/logout', {
+            method: 'GET'
+          });
+          const result = await res.json();
+
+          if (!res.ok || !result.status) {
+            throw new Error(result.message || 'Logout failed');
+          }
+
+          alert(result.message);
+          window.location.href = '/';
+
+        } catch (err) {
+          alert(err.message);
+        }
+      }
+
         onMounted(() => {
           loadWalkRequests();
         });
