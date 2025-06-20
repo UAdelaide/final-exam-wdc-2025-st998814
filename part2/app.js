@@ -39,17 +39,6 @@ app.use(session({
 }));
 
 
-// handle logout
-app.get('/logout',(req,res) => {
-    req.session.destroy((err) => { // session destory
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Could not log out');
-        }
-        res.clearCookie('connect.sid');
-        res.redirect('/index.html'); // redirect to homepage
-    });
-});
 
 
 
