@@ -37,4 +37,10 @@ async function initDb() {
   `);
 }
 
-// here is the route
+// here is routes
+
+// api/dogs
+
+
+
+
