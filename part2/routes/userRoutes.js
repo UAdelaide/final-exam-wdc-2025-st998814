@@ -71,13 +71,12 @@ router.get('/logout', (req, res) => {
     if (err) {
       console.error(err);
       return res.status(500).json({
-        status: 'error',
+        status: false,
         message: 'Could not log out'
       });
     }
-
     res.status(200).json({
-      status: 'ok',
+      status: true,
       message: 'Logout successful'
     });
   });
