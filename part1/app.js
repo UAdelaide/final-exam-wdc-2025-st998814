@@ -18,6 +18,17 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
+const dbConfig = {
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'dogwalks'
+};
+
+let pool;
+
+async function initDb() {
+  pool = await mysql.createPool(dbConfig);
 
 
 
