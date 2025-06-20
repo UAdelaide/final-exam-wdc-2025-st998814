@@ -21,6 +21,6 @@ app.use(session({
     saveUninitialized: false
 }));
 
-app.post('')
+app.post('/login')
 // Export the app instead of listening here
 module.exports = app;
