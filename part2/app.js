@@ -81,7 +81,7 @@ app.get('/logout',(req,res) => {
     });
 });
 
-// routes for 0wner-dashboard
+// routes for owner-dashboard
 app.get('/owner-dashboard', async (req, res) => {
     // Check if user is logged in and is an owner
     if (!req.session.user || req.session.user.role !== 'owner') {
