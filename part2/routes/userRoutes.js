@@ -75,7 +75,6 @@ router.get('/logout', (req, res) => {
         message: 'Could not log out'
       });
     }
-    res.clearCookie('connect.sid');
     res.json({
       status: 'ok',
       message: 'Logout successful'
