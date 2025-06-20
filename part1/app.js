@@ -40,7 +40,22 @@ app.get('/api/dogs', async (req, res) => {
     `);
 
     // fetch random dog photo
-    const dogsWithPhoto=await Promise.all(rows.map(async (dog) => {)
+    const dogsWithPhoto=await Promise.all(rows.map(async (dog) => {
+      try{
+        const 
+
+
+
+
+      }
+
+
+
+
+
+
+
+    )
 
     res.json(rows);
   } catch (err) {
