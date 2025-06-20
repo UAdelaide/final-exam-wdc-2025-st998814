@@ -17,6 +17,10 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 
+app.use((req, res, next) => {
+    req.db = pool;
+    next();
+});
 
 
 
