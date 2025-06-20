@@ -4,9 +4,9 @@ const app=express();
 
 
 const dbConfig={
-    host:'localhost',
-    user:'root',
-    password:'rock8888',
-    database:'dogwalks'
+    host: 'localhost',
+    user: 'root',
+    password: 'rock8888',
+    database: 'dogwalks'
 
 };
