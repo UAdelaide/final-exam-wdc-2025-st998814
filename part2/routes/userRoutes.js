@@ -73,7 +73,7 @@ router.get('/logout',(req,res) => {
             return res.status(500).send('Could not log out');
         }
         res.clearCookie('connect.sid');
-
+        res.redirect('/index.html');
     });
 });
 
