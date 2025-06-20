@@ -39,7 +39,7 @@ app.get('/api/dogs', async (req, res) => {
       JOIN Users ON Dogs.owner_id = Users.user_id
     `);
 
-     fetch random dog photo
+     // fetch random dog photo
      const dogsWithPhoto = await Promise.all(rows.map(async (dog) => {
        let photo_url = '';
        try {
