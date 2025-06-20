@@ -46,10 +46,11 @@ app.get('/api/dogs', async (req, res) => {
         const data = await response.json();
         dog.photo_url = data.message;
       } catch (err){
+        console.error('Failed to load img')
 
 
 
-        
+
       }
 
 
