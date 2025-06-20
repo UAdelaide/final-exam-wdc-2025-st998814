@@ -70,7 +70,7 @@ app.post('/login',async(req,res) => {
 });
 
 // handle logout
-app.get('/logout',(req,res)=>{
+app.get('/logout',(req,res) => {
     req.session.destroy((err) => {
         if (err) {
             console.error(err);
