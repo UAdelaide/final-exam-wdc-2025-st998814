@@ -33,7 +33,7 @@ initDb();
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 app.use(session({
-    secret: "jjj",
+    secret: "y68n8ubhyvgtfbjuhygf",
     resave: false,
     saveUninitialized: false
 }));
