@@ -44,7 +44,13 @@ app.get('/api/dogs', async (req, res) => {
       try{
         const response=await fetch ('https://dog.ceo/api/breeds/image/random');
         const data = await response.json();
-        dog.photo_url = data.message; 
+        dog.photo_url = data.message;
+      } catch (err){
+
+
+
+        
+      }
 
 
 
