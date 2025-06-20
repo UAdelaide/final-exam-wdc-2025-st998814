@@ -36,7 +36,7 @@ app.use('/api/users', userRoutes);
 
 
 
-
+// create api to fectch
 app.get('/api/owner/dogs', async (req, res) => {
     try {
         if (!req.session.user || req.session.user.role !== 'owner') {
