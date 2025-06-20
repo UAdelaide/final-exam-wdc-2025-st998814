@@ -48,7 +48,9 @@ app.get('/api/dogs', async (req, res) => {
       } catch (err){
         console.error('Failed to load img:',err);
         dog.photo_url = ''; //fallback
-        
+
+      }
+      return dog;
 
 
 
@@ -60,15 +62,9 @@ app.get('/api/dogs', async (req, res) => {
 
 
 
-      }
 
 
 
-
-
-
-
-    )
 
     res.json(rows);
   } catch (err) {
