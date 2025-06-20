@@ -68,7 +68,7 @@ app.get('/api/walkrequests/open',async(req, res)=>{
 // /api/walkers/summary
 
 
-app.get()
+app.get('/api/walkers/summary',async(req,res)=>)
 
 
 
