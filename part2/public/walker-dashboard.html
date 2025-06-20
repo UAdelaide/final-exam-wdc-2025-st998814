@@ -49,10 +49,24 @@
         const user = 3;
         const userId = ref(null); // store userID
         // get current user
+        async function getCurrentUser() {
+        try {
+        const res = await fetch('/api/users/me', {
+          method: 'GET',
+          credentials: 'include'
+        });
+        if (!res.ok) throw new Error('Failed to fetch user info');
+        const user = await res.json();
+        userId.value = user.id;  
+      } catch (err) {
+        console.error('Error in getCurrentUser:', err);
+        error.value = 'Failed to load user info';
+      }
+    }
 
 
 
-        
+
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
