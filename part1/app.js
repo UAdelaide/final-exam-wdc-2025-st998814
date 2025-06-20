@@ -43,7 +43,9 @@ app.get('/api/dogs', async (req, res) => {
     const dogsWithPhoto=await Promise.all(rows.map(async (dog) => {
       try{
         const response=await fetch ('https://dog.ceo/api/breeds/image/random');
-        
+        const data = await response.json();
+        dog.photo_url = data.message; 
+
 
 
 
