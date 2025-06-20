@@ -56,7 +56,7 @@ app.get('/api/dogs', async (req, res) => {
 
 
 
-      }
+    }));
 
 
 
@@ -66,7 +66,7 @@ app.get('/api/dogs', async (req, res) => {
 
 
 
-    res.json(rows);
+    res.json(dogsWithPhoto);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Internal Server Error' });
