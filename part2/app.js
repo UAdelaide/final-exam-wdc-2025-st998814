@@ -36,7 +36,13 @@ app.post('/login',async(req,res)=>{
             };
             if (rows[0].role === 'owner') {
                 res.redirect('/owner-dashboard');
-            } else if
+            } else if (rows[0].role === 'walker'){
+                res.redirect('/owner-dashboard');
+
+
+
+
+            }
 
 
 
