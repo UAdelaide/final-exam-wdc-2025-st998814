@@ -42,7 +42,6 @@ app.use(session({
 
 
 
-
 app.get('/api/owner/dogs', async (req, res) => {
     try {
         if (!req.session.user || req.session.user.role !== 'owner') {
