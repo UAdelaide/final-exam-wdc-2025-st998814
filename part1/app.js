@@ -65,7 +65,10 @@ app.get('/api/walkrequests/open',async(req, res)=>{
 
 
 
-// 
+// /api/walkers/summary
+
+
+app.get()
 
 
 
