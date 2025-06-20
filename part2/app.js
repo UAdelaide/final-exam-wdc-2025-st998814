@@ -26,8 +26,14 @@ app.post('/login',async(req,res)=>{
     try {
         const [rows] = await pool.query(
             `SELECT * FROM Users WHERE username = ? AND password_hash = ?`,
-            [username, password] 
+            [username, password]
         );
+        if (rows.length > 0) {
+            req.session.user = {
+                id: rows[0].user_id,
+                username: rows[0].username,
+                role: rows[0].role
+            };
 
 
 
@@ -35,6 +41,8 @@ app.post('/login',async(req,res)=>{
 
 
 
-})
+
+
+});
 // Export the app instead of listening here
 module.exports = app;
