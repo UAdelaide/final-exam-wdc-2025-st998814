@@ -99,7 +99,10 @@ createApp({
       try{
         const res=await fetch ('/api/dogs');
         if (!res.ok) throw new Error ('Failed to load dogs');
-        this.dogs = await res.json()
+        this.dogs = await res.json();
+      } catch(err){
+
+        console.error('Error loading dogs:', err);
 
 
 
