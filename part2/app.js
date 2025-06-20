@@ -61,8 +61,7 @@ app.get('/api/dogs', async (req, res) => {
       return { ...dog, photo_url };
 
 
-
-     }));
+}));
 
 // create api to fectch owner's dog
 app.get('/api/owner/dogs', async (req, res) => {
@@ -87,3 +86,5 @@ app.get('/api/owner/dogs', async (req, res) => {
 
 
 module.exports = app;
+
+
