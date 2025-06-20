@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 const session = require('express-session');
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
