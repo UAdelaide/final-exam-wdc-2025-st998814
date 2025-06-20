@@ -77,7 +77,7 @@ app.get('/logout',(req,res) => {
             return res.status(500).send('Could not log out');
         }
         res.clearCookie('connect.sid');
-        res.redirect('/index.html'); //re
+        res.redirect('/index.html'); // redirect to homepage
     });
 });
 
