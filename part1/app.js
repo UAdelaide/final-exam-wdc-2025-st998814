@@ -10,7 +10,7 @@ const dbConfig={
     database: 'dogwalks'
 
 };
-
+const port=8080;
 let pool;
 
 
