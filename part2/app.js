@@ -36,6 +36,34 @@ app.use('/api/users', userRoutes);
 
 
 
+app.get('/api/dogs', async (req, res) => {
+  try {
+    const [rows] = await pool.query(`
+      SELECT
+        Dogs.name AS dog_name,
+        Dogs.size,
+        Users.username AS owner_username
+      FROM Dogs
+      JOIN Users ON Dogs.owner_id = Users.user_id
+    `);
+
+     // fetch random dog photo
+     const dogsWithPhoto = await Promise.all(rows.map(async (dog) => {
+       let photo_url = '';
+       try {
+         const response = await fetch('https://dog.ceo/api/breeds/image/random');
+         const data = await response.json();
+        photo_url = data.message;
+       } catch (err) {
+        console.error('Failed to load img:', err);
+           photo_url = ''; // fallback
+      }
+      return { ...dog, photo_url };
+
+
+
+     }));
+
 // create api to fectch owner's dog
 app.get('/api/owner/dogs', async (req, res) => {
     try {
