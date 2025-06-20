@@ -101,17 +101,8 @@ createApp({
         if (!res.ok) throw new Error ('Failed to load dogs');
         this.dogs = await res.json();
       } catch(err){
-
         console.error('Error loading dogs:', err);
-
-
-
       }
-
-
-
-
-
     }
   }
 }).mount('#app');
