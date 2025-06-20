@@ -33,7 +33,7 @@ async function initDb() {
     ('alice123', 'alice@example.com', 'hashed123', 'owner'),
     ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
     ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-    ('daveowner', 'dave@example.com', 'hashed321', 'owner'),
+    ('devdog', 'devdog@example.com', 'hashed444', 'owner'),
     ('evewalker', 'eve@example.com', 'hashed654', 'walker')
   `);
 
