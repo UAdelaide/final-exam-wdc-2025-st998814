@@ -70,7 +70,7 @@ app.post('/login',async(req,res) => {
 });
 
 // handle logout
-
+app.get('/logout',(req,res))
 
 module.exports = app;
 
