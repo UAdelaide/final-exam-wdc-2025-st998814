@@ -24,15 +24,19 @@
       </div>
       <div class="card-body">
         <form @submit.prevent="submitWalkRequest">
-<div class="mb-3">
-  <label class="form-label">Select Your Dog:</label>
-  <select v-model="form.dog_id" class="form-control" required>
-    <option value="">-- Choose a dog --</option>
-    <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id">
-      {{ dog.name }}
-    </option>
-  </select>
-</div>
+
+
+          <div class="mb-3">
+            <label class="form-label">Select Your Dog:</label>
+            <select v-model="form.dog_id" class="form-control" required>
+              <option value="">-- Choose a dog --</option>
+              <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id">
+                {{ dog.name }}
+              </option>
+            </select>
+          </div>
+
+
           <div class="mb-3">
             <label class="form-label">Requested Date & Time</label>
             <input v-model="form.requested_time" type="datetime-local" class="form-control" required>
@@ -75,6 +79,9 @@
     <p v-else>No walk requests yet.</p>
   </div>
 
+
+
+  
   <script>
     const { createApp, ref, onMounted } = Vue;
 
