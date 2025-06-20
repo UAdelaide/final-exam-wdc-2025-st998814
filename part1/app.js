@@ -22,7 +22,7 @@ const dbConfig = {
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'dogwalks'
+  database: 'DogWalkService'
 };
 
 let pool;
