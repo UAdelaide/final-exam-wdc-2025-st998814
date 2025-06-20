@@ -14,7 +14,7 @@ let pool;
 async function initDb() {
   pool = await mysql.createPool(dbConfig);
 
-  // 初始化資料 — 插入 Users, Dogs, WalkRequests
+  
   await pool.query(`INSERT IGNORE INTO Users (username, email, password_hash, role) VALUES
     ('alice123', 'alice@example.com', 'hashed123', 'owner'),
     ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
