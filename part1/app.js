@@ -7,7 +7,7 @@ const dbConfig={
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'dogwalks.sql'
+    database: 'dogwalks'
 
 };
 const port=8080;
