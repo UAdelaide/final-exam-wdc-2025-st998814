@@ -43,7 +43,7 @@ app.get('/api/owner/dogs', async (req, res) => {
             return res.status(401).json({ error: 'Unauthorized' });
         }
 
-        const [rows] = await pool.query(`
+        const [rows] = await req.db.query(`
             SELECT dog_id, name
             FROM Dogs
             WHERE owner_id = ?
