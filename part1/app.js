@@ -64,12 +64,20 @@ app.get('/api/dogs', async (req, res) => {
 // /api/walkrequests/open
 
 app.get('/api/walkrequests/open',async(req, res)=>{
+    try{
 
 
 
 
 
-    
+        
+    }
+
+
+
+
+
+
 }
 
 
