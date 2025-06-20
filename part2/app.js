@@ -78,7 +78,7 @@ app.get('/logout',(req,res)=>{
         }
         res.clearCookie('connect.sid');
         res.redirect('/login');
-
+    });
 });
 
 module.exports = app;
