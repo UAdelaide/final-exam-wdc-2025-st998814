@@ -66,15 +66,22 @@ router.post('/login', async (req, res) => {
 });
 
 
-router.get('/logout',(req,res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Could not log out');
-        }
-        res.clearCookie('connect.sid');
-        res.redirect('/index.html');
+router.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({
+        status: 'error',
+        error: 'Could not log out'
+      });
+    }
+
+    res.clearCookie('connect.sid');
+    res.json({
+      status: 'ok',
+      message: 'Logout successful'
     });
+  });
 });
 
 
