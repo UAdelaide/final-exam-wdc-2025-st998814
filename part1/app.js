@@ -54,8 +54,6 @@ app.get('/api/dogs', async (req, res) => {
 
 
 
-
-
     }));
 
 
