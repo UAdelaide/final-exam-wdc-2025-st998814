@@ -170,7 +170,7 @@ createApp({
 
     async function logout() {
       try {
-        const res = await fetch('/logout', {
+        const res = await fetch('/api/users/logout', {
           method: 'GET'
         });
         const result = await res.json();
