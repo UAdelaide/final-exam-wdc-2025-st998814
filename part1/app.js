@@ -115,11 +115,11 @@ app.get('/api/walkers/summary', async (req, res) => {
 //     pool = await mysql.createPool(dbConfig);
 //     // await initDb();
 //     app.listen(8080, () => {
-//       console.log('Server running at http://localhost:8080');
-//     });} catch (err) {
-//     console.error('Failed to connect to database:', err);
-//     process.exit(1);
-//   }
-// }
-// start();
+       console.log('Server running at http://localhost:8080');
+     });} catch (err) {
+     console.error('Failed to connect to database:', err);
+     process.exit(1);
+   }
+ }
+ start();
 module.exports = app;
