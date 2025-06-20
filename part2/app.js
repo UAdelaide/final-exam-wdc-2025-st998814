@@ -61,7 +61,17 @@ app.get('/api/dogs', async (req, res) => {
       return { ...dog, photo_url };
 
 
-}));
+
+     }));
+
+
+
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 // create api to fectch owner's dog
 app.get('/api/owner/dogs', async (req, res) => {
