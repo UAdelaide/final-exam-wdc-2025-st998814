@@ -43,8 +43,9 @@ app.post('/login',async(req,res)=>{
             }
         } else {
 
-            res.send()
+            res.send('Login failed. Invalid username or password.');
         }
+    }
 
 
 
