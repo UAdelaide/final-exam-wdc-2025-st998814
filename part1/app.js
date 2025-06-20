@@ -88,6 +88,34 @@ app.get('/api/walkrequests/open', async (req, res) => {
 });
 
 
+app.get('/api/walkers/summary', async (req, res) => {
+  try {
+    const [rows] = await pool.query(`
+      SELECT
+        u.username AS walker_username,
+        COUNT(r.rating_id) AS total_ratings,
+        AVG(r.rating) AS average_rating,
+        SUM(CASE WHEN w.status = 'completed' THEN 1 ELSE 0 END) AS completed_walks
+      FROM Users u
+      LEFT JOIN WalkApplications a ON a.walker_id = u.user_id
+      LEFT JOIN WalkRequests w ON a.request_id = w.request_id
+      LEFT JOIN WalkRatings r ON r.request_id = w.request_id AND r.walker_id = u.user_id
+      WHERE u.role = 'walker'
+      GROUP BY u.username
+    `);
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
-
+app.listen(port, async () => {
+  try {
+    await initDb();
+    console.log(`Server running at http://localhost:${port}`);
+  } catch (err) {
+    console.error('Failed to initialize database:', err);
+  }
+});
 module.exports = app;
