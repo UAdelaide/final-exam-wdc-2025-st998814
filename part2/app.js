@@ -81,26 +81,28 @@ app.get('/logout',(req,res) => {
     });
 });
 
-// routes for owner-dashboard
-app.get('/owner-dashboard', async (req, res) => {
-    // Check if user is logged in and is an owner
-    if (!req.session.user || req.session.user.role !== 'owner') {
-        return res.redirect('/login'); // Redirect to login if not authorized
+
+
+
+app.get('/api/owner/dogs', async (req, res) => {
+    try {
+        if (!req.session.user || req.session.user.role !== 'owner') {
+            return res.status(401).json({ error: 'Unauthorized' });
+        }
+
+        const [rows] = await pool.query(`
+            SELECT dog_id, name
+            FROM Dogs
+            WHERE owner_id = ?
+        `, [req.session.user.id]);
+
+        res.json(rows);
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-
-    // Query: Get list of dogs owned by the current logged-in owner
-    const [dogs] = await pool.query(
-        `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`,
-        [req.session.user.id]
-    );
-
-    // Render owner-dashboard page, passing username and dogs list to template
-    res.render('owner-dashboard', {
-        username: req.session.user.username,
-        dogs
-    });
 });
-
 
 module.exports = app;
 
